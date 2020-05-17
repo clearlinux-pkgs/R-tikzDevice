@@ -4,7 +4,7 @@
 #
 Name     : R-tikzDevice
 Version  : 0.12.3
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/tikzDevice_0.12.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tikzDevice_0.12.3.tar.gz
 Summary  : R Graphics Output in LaTeX Format
@@ -13,10 +13,8 @@ License  : GPL-2.0+
 Requires: R-tikzDevice-lib = %{version}-%{release}
 Requires: R-filehash
 Requires: R-png
-Requires: R-stringi
 BuildRequires : R-filehash
 BuildRequires : R-png
-BuildRequires : R-stringi
 BuildRequires : buildreq-R
 
 %description
@@ -39,21 +37,22 @@ lib components for the R-tikzDevice package.
 
 %prep
 %setup -q -c -n tikzDevice
+cd %{_builddir}/tikzDevice
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565281154
+export SOURCE_DATE_EPOCH=1589746264
 
 %install
-export SOURCE_DATE_EPOCH=1565281154
+export SOURCE_DATE_EPOCH=1589746264
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -161,3 +160,4 @@ R CMD check --no-manual --no-examples --no-codoc tikzDevice || :
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/tikzDevice/libs/tikzDevice.so
+/usr/lib64/R/library/tikzDevice/libs/tikzDevice.so.avx2
