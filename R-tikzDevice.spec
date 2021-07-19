@@ -4,7 +4,7 @@
 #
 Name     : R-tikzDevice
 Version  : 0.12.3.1
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/tikzDevice_0.12.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tikzDevice_0.12.3.1.tar.gz
 Summary  : R Graphics Output in LaTeX Format
@@ -44,10 +44,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1593531511
+export SOURCE_DATE_EPOCH=1626707642
 
 %install
-export SOURCE_DATE_EPOCH=1593531511
+export SOURCE_DATE_EPOCH=1626707642
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -160,4 +160,3 @@ R CMD check --no-manual --no-examples --no-codoc tikzDevice || :
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/tikzDevice/libs/tikzDevice.so
-/usr/lib64/R/library/tikzDevice/libs/tikzDevice.so.avx2
