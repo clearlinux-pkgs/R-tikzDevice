@@ -4,7 +4,7 @@
 #
 Name     : R-tikzDevice
 Version  : 0.12.3.1
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/tikzDevice_0.12.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tikzDevice_0.12.3.1.tar.gz
 Summary  : R Graphics Output in LaTeX Format
